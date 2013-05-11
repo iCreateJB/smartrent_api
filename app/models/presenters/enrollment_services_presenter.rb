@@ -25,6 +25,6 @@ class EnrollmentServicesPresenter
           }
         end
       ]
-    }
+    }.to_json
   end
 end
