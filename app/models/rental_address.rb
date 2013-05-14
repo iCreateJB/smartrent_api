@@ -5,6 +5,7 @@ class RentalAddress
   property :street, String
   property :city, String
   property :state, String
+  property :zip, String
 
 end
 
