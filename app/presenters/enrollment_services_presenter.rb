@@ -20,7 +20,7 @@ class EnrollmentServicesPresenter
         :last_name  => i.last_name,
         :renting_in_state_code    => i.renting_in_state_code,
         :sent_rental_applications => i.sent_rental_applications.size,
-        :confirmed_at             => i.confirmed_at
+        :confirmed_at             => i.confirmed_at.strftime('%Y-%m-%d')
       }
     end
     @enrollments
