@@ -12,6 +12,7 @@ class Landlord
   property :company, String
   property :email, String
   property :description, String
+  property :confirmed_at, DateTime
 
   one  :work_address, :class_name => "Address"
   many :sent_rental_applications, :class_name => "RentalApplication"
