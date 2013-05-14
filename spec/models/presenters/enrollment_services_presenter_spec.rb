@@ -13,10 +13,15 @@ describe EnrollmentServicesPresenter do
   end
 
   it { should respond_to(:response) }
+  it { should respond_to(:renters) }
   it { subject.class.should respond_to(:response) }
 
   it "should return all enrolled accounts as JSON" do 
     JSON.parse(subject.response)["count"].should == 1
+  end
+
+  it "should return all the renters" do 
+    subject.renters.should be_an_instance_of(Array)
   end
 
   context "response" do 
