@@ -13,7 +13,7 @@ class EnrollmentServices
   end
 
   def enrollments_by_date
-    Renter.by_date(options)
+    Renter.enrolled_by_date(options)
   end
 
 end
