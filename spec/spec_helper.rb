@@ -5,7 +5,7 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'factory_girl'
 
-FactoryGirl.definition_file_paths = %w(#{config.root}/spec/factories)
+FactoryGirl.definition_file_paths << File.join(File.dirname(__FILE__), 'factories')
 FactoryGirl.find_definitions
 
 # Requires supporting ruby files with custom matchers and macros, etc,
