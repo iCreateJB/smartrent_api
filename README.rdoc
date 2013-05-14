@@ -1,6 +1,6 @@
  == API Documentation
 
- # v0.1
+ # v0.2
 
 GET /enrollments 
   [Description]
@@ -32,4 +32,24 @@ GET /renter_status
   [Params]
     - api_key
     - email ( renter's email )
+
+  [Response]
+    {  
+      "email": "john.doe@smartrent.com",
+      "first_name": "john",
+      "last_name": "doe",
+      "renting_in_state_code": "CA",
+      "sent_rental_applications": "1",
+      "confirmed_at": "2012-09-16",
+      "applications": [
+        {
+          "landlord": "joe.brown@thevilla.com",
+          "street": "123 Main Street",
+          "city": "Los Angeles",
+          "state": "CA",
+          "postal": "12345",
+          "sent_on": "2012-12-21"
+        }
+      ]
+    }
 
