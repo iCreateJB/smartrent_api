@@ -4,12 +4,9 @@ FactoryGirl.define do
     last_name             "Fonacier"
     phone                 "818 123 1234"
     sequence(:email)      {|n| "user_#{n}@landlordexample.com" }
-    password              ::TEST_PASSWORD
-    password_confirmation ::TEST_PASSWORD
   end
   
   factory :landlord, :parent => :unconfirmed_landlord do
     confirmed_at Time.now - 1.day
-    confirmation_token 'a_token'
   end
 end
