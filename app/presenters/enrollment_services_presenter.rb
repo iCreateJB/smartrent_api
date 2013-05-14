@@ -19,7 +19,8 @@ class EnrollmentServicesPresenter
         :first_name => i.first_name,
         :last_name  => i.last_name,
         :renting_in_state_code    => i.renting_in_state_code,
-        :sent_rental_applications => i.sent_rental_applications.size
+        :sent_rental_applications => i.sent_rental_applications.size,
+        :confirmed_at             => i.confirmed_at
       }
     end
     @enrollments
@@ -29,6 +30,6 @@ class EnrollmentServicesPresenter
     {
       :count       => @options.size, 
       :enrollments => renters
-    }.to_json
+    }
   end
 end

@@ -17,7 +17,7 @@ describe EnrollmentServicesPresenter do
   it { subject.class.should respond_to(:response) }
 
   it "should return all enrolled accounts as JSON" do 
-    JSON.parse(subject.response)["count"].should == 1
+    subject.response[:count].should == 1
   end
 
   it "should return all the renters" do 
@@ -26,15 +26,15 @@ describe EnrollmentServicesPresenter do
 
   context "response" do 
     before(:each) do 
-      @response = JSON.parse(subject.response)
+      @response = subject.response
     end
 
     it "should return the count" do 
-      @response.has_key?("count").should be_true
+      @response.has_key?(:count).should be_true
     end
 
     it "should return an array of enrollments" do 
-      @response.has_key?("enrollments").should be_true
+      @response.has_key?(:enrollments).should be_true
     end
   end
 end
