@@ -15,7 +15,7 @@ FactoryGirl.define do
     current_address_is_billing_address false
     has_pets true
     occupants {[FactoryGirl.build(:occupant), FactoryGirl.build(:occupant)]}
-    social_security "897506697"
+    # social_security "897506697"
     pets { [FactoryGirl.build(:pet), FactoryGirl.build(:pet) ]}
   end
 
