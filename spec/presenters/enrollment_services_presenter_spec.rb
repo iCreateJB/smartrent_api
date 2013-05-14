@@ -29,12 +29,8 @@ describe EnrollmentServicesPresenter do
       @response = subject.response
     end
 
-    it "should return the count" do 
-      @response.has_key?(:count).should be_true
-    end
-
-    it "should return an array of enrollments" do 
-      @response.has_key?(:enrollments).should be_true
-    end
+    it { @response.has_key?(:count).should be_true }
+    it { @response.has_key?(:enrollments).should be_true }
+    
   end
 end
