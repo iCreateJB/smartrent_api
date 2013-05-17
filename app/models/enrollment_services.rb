@@ -13,7 +13,11 @@ class EnrollmentServices
   end
 
   def enrollments_by_date
-    Renter.enrolled_by_date(options)
+    if @options[:type] == 'renter'
+      Renter.enrolled_by_date(options)
+    else
+      Landlord.enrolled_by_date(options)
+    end
   end
 
 end

@@ -1,11 +1,19 @@
 require 'spec_helper'
 
 describe "Routes" do 
-  it "GET => '/v1/enrollments'" do 
-    expect(:get => '/v1/enrollments').to route_to(:controller => 'enrollments', :action => 'show')
+  it "GET => '/v1/renter_enrollments'" do 
+    expect(:get => '/v1/renter_enrollments').to route_to(:controller => 'enrollments', :action => 'show', :type => "renter")
+  end
+
+  it "GET => '/v1/landlord_enrollments'" do 
+    expect(:get => '/v1/landlord_enrollments').to route_to(:controller => 'enrollments', :action => 'show', :type => "landlord")
   end
 
   it "GET => '/v1/applications'" do 
     expect(:get => '/v1/applications').to route_to(:controller => 'landlords', :action => 'applications')
+  end
+
+  it "GET => '/v1/renter'" do 
+    expect(:get => '/v1/renter').to route_to(:controller => 'renters', :action => 'show')
   end
 end

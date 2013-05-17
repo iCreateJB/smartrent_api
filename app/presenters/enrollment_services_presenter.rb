@@ -2,7 +2,7 @@ class EnrollmentServicesPresenter
   
   attr_accessor :options, :count
 
-  def self.response
+  def self.response(options={})
     self.new(options).response
   end
 
@@ -18,7 +18,7 @@ class EnrollmentServicesPresenter
         :email      => i.email, 
         :first_name => i.first_name,
         :last_name  => i.last_name,
-        :renting_in_state_code    => i.renting_in_state_code,
+        :renting_in_state_code    => (i.class == Landlord) ? '' : i.renting_in_state_code , 
         :sent_rental_applications => i.sent_rental_applications.size,
         :confirmed_at             => i.confirmed_at.strftime('%Y-%m-%d')
       }
