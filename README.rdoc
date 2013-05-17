@@ -1,15 +1,15 @@
  == API Documentation
 
- # v0.2
+ # v0.3
 
-GET /enrollments 
+GET /renter_enrollments 
   [Description]
-    Return all active enrollments where the user has actually confirmed the account. ( Signifies a successful signup on the home screen and then clicking of the email receipt. )
+    Return all active renter enrollments where the user has actually confirmed the account. ( Signifies a successful signup on the home screen and then clicking of the email receipt. )
 
   [Params]
     - api_key
-    - start_date
-    - end_date
+    - start_date (optional)
+    - end_date (optional)
 
   [Response]
     { 
@@ -25,6 +25,29 @@ GET /enrollments
         }
       ]
     }
+
+GET /landlord_enrollments 
+  [Description]
+    Return all active landlord enrollments where the user has actually confirmed the account. ( Signifies a successful signup on the home screen and then clicking of the email receipt. )
+
+  [Params]
+    - api_key
+    - start_date (optional)
+    - end_date (optional)
+
+  [Response]
+    { 
+      "count":"1",
+      "enrollments": [
+        { 
+          "email":"john.doe@smartrent.com",
+          "first_name": "john",
+          "last_name": "doe",
+          "sent_rental_applications": "5",
+          "confirmed_at": "2012-09-16"
+        }
+      ]
+    }    
 
 GET /renter_status
   [Description]
