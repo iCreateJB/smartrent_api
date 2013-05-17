@@ -2,7 +2,7 @@ class RentalServicesPresenter
 
   attr_accessor :options
 
-  def self.response
+  def self.response(options={})
     self.new(options).response
   end
 
