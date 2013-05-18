@@ -1,5 +1,7 @@
 class LandlordsController < ApplicationController
 
-  def applications
+  def show
+    @landlord = LandlordServices.summarize(params)
+    respond_with LandlordServicesPresenter.response(@landlord)
   end
 end
