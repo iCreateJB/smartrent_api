@@ -1,4 +1,5 @@
 class LandlordsController < ApplicationController
+  respond_to :json
 
   def show
     @landlord = LandlordServices.summarize(params)
