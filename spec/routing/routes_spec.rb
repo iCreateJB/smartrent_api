@@ -10,10 +10,14 @@ describe "Routes" do
   end
 
   it "GET => '/v1/applications'" do 
-    expect(:get => '/v1/applications').to route_to(:controller => 'landlords', :action => 'applications')
+    expect(:get => '/v1/applications').to route_to(:controller => 'landlords', :action => 'show')
   end
 
   it "GET => '/v1/renter'" do 
     expect(:get => '/v1/renter').to route_to(:controller => 'renters', :action => 'show')
+  end
+
+  it "GET => '/v1/status'" do 
+    expect(:get => '/v1/status').to route_to(:controller => 'index', :action => 'show')
   end
 end
