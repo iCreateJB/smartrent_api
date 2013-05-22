@@ -51,6 +51,7 @@ GET /landlord_enrollments
 
 GET /renter_status
   [Description]
+    Get individual information about a renter account. ( Demographics and whom they have applied to and when. )
 
   [Params]
     - api_key
@@ -75,4 +76,15 @@ GET /renter_status
         }
       ]
     }
+
+GET /status
+  [Description]
+    Get the status of the API. 
+
+  [Params]
+
+  [Response]
+    {
+      "status": "OK"  
+    }    
 
