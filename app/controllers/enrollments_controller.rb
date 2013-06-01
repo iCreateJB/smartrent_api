@@ -3,6 +3,10 @@ class EnrollmentsController < ApplicationController
   
   def show
     @enrollments = EnrollmentServices.by_date(params)
-    respond_with EnrollmentServicesPresenter.response(@enrollments)
+    if @enrollments.valid?
+      respond_with EnrollmentServicesPresenter.response(@enrollments.enrollments)
+    else
+      respond_with @enrollments.errors
+    end
   end
 end
