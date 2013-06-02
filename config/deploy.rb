@@ -6,7 +6,7 @@ $:.unshift "."
 
 # Overwrite the default deploy start/stop/restart actions with passenger ones
 require 'config/deploy/passenger'
-require 'config/deploy/remote_sync'
+# require 'config/deploy/remote_sync'
 require 'bundler/capistrano'
 require 'capistrano/ext/multistage'
 load 'deploy/assets'
@@ -32,7 +32,7 @@ namespace :deploy do
     link_shared_files
   end
 
-  before "deploy:assets:precompile", "deploy:link_shared_files"
+  before "deploy:link_shared_files"
 
   desc "Recycle the database"
   task :db_install do
