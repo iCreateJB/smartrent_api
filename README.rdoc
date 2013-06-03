@@ -1,6 +1,6 @@
  == API Documentation
 
- # v0.3
+ # v1.0
 
 GET /v1/renter_enrollments 
   [Description]
