@@ -110,7 +110,7 @@ module Ripple::Document
 
     # @see OrmAdapter::Base#find_all
     def find_all(options)
-      conditions, order = extract_conditions_and_order!(options)
+      conditions, order = extract_conditions!(options)
       if order.blank?
         klass.find_with_conditions(conditions)
       else
