@@ -10,7 +10,7 @@ class Landlord
   property :fax, String
   property :website, String
   property :company, String
-  property :email, String
+  property :email, String, :index => String
   property :description, String
   property :confirmed_at, DateTime
 

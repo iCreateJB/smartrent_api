@@ -5,7 +5,7 @@ class Renter
 
   property :first_name, String
   property :last_name, String
-  property :email, String
+  property :email, String, :index => String
   property :renting_in_state_code, String
   property :view_transmit_helper, Boolean, :default => false
   property :confirmed_at, DateTime
