@@ -115,3 +115,7 @@ GET /v1/status
       "status": "OK"  
     }    
 
+# v2.0
+
+# Version bump since authentication scheme changed. 
+# Authentication is now done via an Authorization header of your HMAC signed request string
