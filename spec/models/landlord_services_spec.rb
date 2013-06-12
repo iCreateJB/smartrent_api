@@ -6,7 +6,7 @@ describe LandlordServices do
   let(:renter){ FactoryGirl.create(:renter, :confirmed_at => Date.today) }
   let(:options){
     {
-      :landlord => landlord.email
+      :email => landlord.email
     }
   }
 

@@ -5,7 +5,7 @@ describe RentalServices do
   let(:renter){ FactoryGirl.create(:renter, :confirmed_at => Date.today) }
   let(:options){
     {
-      :renter => renter.email
+      :email => renter.email
     }
   }
 

@@ -1,5 +1,7 @@
 FactoryGirl.define do
   factory :api_key do
-    access_token SecureRandom.hex(16)
+    key SecureRandom.hex(16)
+    secret SecureRandom.hex(16)
+    sequence(:email)  {|n| "api.user#{n}@smartrent.com" }
   end
 end

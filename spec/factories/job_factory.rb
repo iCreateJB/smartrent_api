@@ -5,7 +5,7 @@ FactoryGirl.define do
     address { FactoryGirl.build(:address) }
     monthly_income 1000
     duration { FactoryGirl.build(:duration) }
-    supervisor {FactoryGirl.build(:reference) }
+    supervisor { FactoryGirl.build(:reference) }
     less_than_a_year false
   end  
 end

@@ -10,8 +10,8 @@ describe IndexController do
   it { should respond_to(:show) }
 
   it "should return the system status if up" do 
-    request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Token.encode_credentials(key.access_token)
-    response = get :show, :format => :json
+    request.env['AUTHORIZATION'] = Base64.strict_encode64(OpenSSL::HMAC.digest(OpenSSL::Digest::Digest.new('sha256'), key.secret, URI.decode({:api_key => key.key}.to_query)))
+    response = get :show, :api_key => key.key, :format => :json
     JSON(response.body)['status'].should == 'OK'
   end
 end

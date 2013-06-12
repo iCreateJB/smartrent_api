@@ -9,12 +9,12 @@ describe "Routes" do
     expect(:get => '/v1/landlord_enrollments').to route_to(:controller => 'enrollments', :action => 'show', :type => "landlord")
   end
 
-  it "GET => '/v1/landlord'" do 
-    expect(:get => '/v1/landlord').to route_to(:controller => 'landlords', :action => 'show')
+  it "GET => '/v1/landlords'" do 
+    expect(:get => '/v1/landlords').to route_to(:controller => 'landlords', :action => 'show')
   end
 
-  it "GET => '/v1/renter'" do 
-    expect(:get => '/v1/renter').to route_to(:controller => 'renters', :action => 'show')
+  it "GET => '/v1/renters'" do 
+    expect(:get => '/v1/renters').to route_to(:controller => 'renters', :action => 'show')
   end
 
   it "GET => '/v1/status'" do 

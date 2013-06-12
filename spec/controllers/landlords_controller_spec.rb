@@ -12,8 +12,8 @@ describe LandlordsController do
   end
 
   it "should return landlord information" do 
-    request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Token.encode_credentials(key.access_token)
-    response = get :show, :landlord => landlord.email, :format => :json
+    request.env['AUTHORIZATION'] = Base64.strict_encode64(OpenSSL::HMAC.digest(OpenSSL::Digest::Digest.new('sha256'), key.secret, URI.decode({:api_key => key.key, :email => landlord.email}.to_query)))
+    response = get :show, :api_key => key.key, :email => landlord.email, :format => :json
     JSON.parse(response.body)['email'].should == landlord.email
   end
 end
