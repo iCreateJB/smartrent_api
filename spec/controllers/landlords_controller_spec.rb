@@ -16,4 +16,10 @@ describe LandlordsController do
     response = get :show, :api_key => key.key, :email => landlord.email, :format => :json
     JSON.parse(response.body)['email'].should == landlord.email
   end
+
+  it "should return an error for an invalid renter" do 
+    request.env['AUTHORIZATION'] = Base64.strict_encode64(OpenSSL::HMAC.digest(OpenSSL::Digest::Digest.new('sha256'), key.secret, URI.decode({:api_key => key.key, :email => ''}.to_query)))
+    response = get :show, :api_key => key.key, :email => '', :format => :json
+    JSON.parse(response.body)['error'].should_not be_nil
+  end  
 end
