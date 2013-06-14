@@ -8,7 +8,7 @@ class LandlordServices
 
   def initialize(options={})
     @options   = options
-    @landlord  = Landlord.find_with_conditions(:email => options[:email]).first
+    @landlord  = Landlord.find_with_conditions(:email => options[:email].downcase.to_s).first
     @sent_applications = []
   end
 
